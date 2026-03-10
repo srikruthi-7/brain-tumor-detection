@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import joblib
-import cv2
 from PIL import Image
 from skimage.feature import local_binary_pattern, hog
 from scipy.ndimage import gaussian_laplace
