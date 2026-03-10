@@ -50,6 +50,6 @@ if uploaded_file is not None:
     st.write(f"Prediction Score: {score:.4f}")
 
     if score > 0.5:
-        st.error("Tumor Detected")
-    else:
         st.success("No Tumor Detected")
+    else:
+        st.error("Tumor Detected")
