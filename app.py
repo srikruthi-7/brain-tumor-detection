@@ -43,7 +43,7 @@ if uploaded_file is not None:
     st.write(f"Model Confidence Score: {confidence:.2f}%")
 
     # improved threshold
-    if prediction > 0.75:
+    if prediction > 0.85:
         st.error("Tumor Detected")
     else:
         st.success("No Tumor Detected")
