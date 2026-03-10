@@ -40,7 +40,8 @@ if uploaded_file is not None:
     image = image.convert("L")
     image = image.resize((128,128))
 
-    img_array = np.array(image) / 255.0
+    img_array = np.array(image).astype("float32")
+    img_array = img_array / np.max(img_array)
     img_array = img_array.reshape(1,128,128,1)
 
     # Prediction
