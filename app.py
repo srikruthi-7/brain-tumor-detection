@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import numpy as np
 import joblib
@@ -9,8 +10,7 @@ from skimage.transform import resize
 
 # Load Models
 
-import os
-import joblib
+
 
 BASE_DIR = os.path.dirname(__file__)
 
