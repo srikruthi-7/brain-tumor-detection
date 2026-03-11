@@ -110,6 +110,7 @@ if uploaded_file is not None:
     st.subheader("Final Ensemble Prediction")
 
     if ens_pred == 1:
-        st.error("Tumor Detected")
-    else:
         st.success("No Tumor Detected")
+    else:
+        st.error("Tumor Detected")
+        
