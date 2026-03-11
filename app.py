@@ -90,12 +90,14 @@ if uploaded_file is not None:
     rf_prob = rf.predict_proba(features)[0][1]
     lr_prob = lr.predict_proba(features)[0][1]
 
+# Ensemble prediction
+    ens_pred = ensemble.predict(features)[0]
+
     st.subheader("Model Predictions")
 
-    st.write("SVM Tumor Probability:", round(svm_prob*100,2),"%")
-    st.write("RF Tumor Probability:", round(rf_prob*100,2),"%")
-    st.write("LR Tumor Probability:", round(lr_prob*100,2),"%")
-    st.subheader("Final Ensemble Prediction")
+    st.write("SVM Tumor Probability:", round(svm_prob*100,2), "%")
+    st.write("RF Tumor Probability:", round(rf_prob*100,2), "%")
+    st.write("LR Tumor Probability:", round(lr_prob*100,2), "%")
 
     if ens_pred == 1:
         st.error("Tumor Detected")
