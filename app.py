@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(__file__)
 svm = joblib.load(os.path.join(BASE_DIR,"svm_model.pkl"))
 rf = joblib.load(os.path.join(BASE_DIR,"rf_model.pkl"))
 lr = joblib.load(os.path.join(BASE_DIR,"lr_model.pkl"))
-ensemble = joblib.load(os.path.join(BASE_DIR,"ensemble_model .pkl"))
+ensemble = joblib.load(os.path.join(BASE_DIR,"ensemble_model.pkl"))
 scaler = joblib.load(os.path.join(BASE_DIR,"scaler.pkl"))
 
 # Streamlit UI
