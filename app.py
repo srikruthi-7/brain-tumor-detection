@@ -85,17 +85,16 @@ if uploaded_file is not None:
 
     features = scaler.transform([features])
 
-    svm_pred = svm.predict(features)[0]
-    rf_pred = rf.predict(features)[0]
-    lr_pred = lr.predict(features)[0]
-    ens_pred = ensemble.predict(features)[0]
+
+    svm_prob = svm.predict_proba(features)[0][1]
+    rf_prob = rf.predict_proba(features)[0][1]
+    lr_prob = lr.predict_proba(features)[0][1]
 
     st.subheader("Model Predictions")
 
-    st.write("SVM:", "Tumor" if svm_pred==1 else "No Tumor")
-    st.write("Random Forest:", "Tumor" if rf_pred==1 else "No Tumor")
-    st.write("Logistic Regression:", "Tumor" if lr_pred==1 else "No Tumor")
-
+    st.write("SVM Tumor Probability:", round(svm_prob*100,2),"%")
+    st.write("RF Tumor Probability:", round(rf_prob*100,2),"%")
+    st.write("LR Tumor Probability:", round(lr_prob*100,2),"%")
     st.subheader("Final Ensemble Prediction")
 
     if ens_pred == 1:
